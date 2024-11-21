@@ -21,6 +21,9 @@
 
 <br /><br />
 
+## About the fork
+Just a fork of the substrate-sidecar-api with an ad-hoc docker-compose to connect to Bittensor Finney mainnet
+
 ## Prerequisites
 
 ### <= v15.0.0
