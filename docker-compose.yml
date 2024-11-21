@@ -1,19 +1,9 @@
 version: "3.8"
 services:
-  polkadot:
-    container_name: polkadot
-    image: docker.io/parity/polkadot:latest
-    volumes:
-      - ~/polkadot-data:/data
-    # ports:
-    #   - "9944:9944"
-    command: '--chain polkadot --unsafe-rpc-external --rpc-cors=all'
-
-  sidecar:
-    # build: .
-    image: docker.io/parity/substrate-api-sidecar:latest
-    read_only: true
+  sidecar-subtensor-finney-public:
+    container_name: sidecar-subtensor-finney-public
+    image: parity/substrate-api-sidecar:latest
     ports:
       - "8080:8080"
     environment:
-      SAS_SUBSTRATE_URL: ws://polkadot:9944
+      SAS_SUBSTRATE_URL: wss://entrypoint-finney.opentensor.ai:443
